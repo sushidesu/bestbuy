@@ -20,10 +20,12 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={styles["body"]}>{children}</body>
-      <footer>
-        <Footer />
-      </footer>
+      <body className={styles["body"]}>
+        <div className={styles["main"]}>{children}</div>
+        <footer>
+          <Footer />
+        </footer>
+      </body>
     </html>
   )
 }
