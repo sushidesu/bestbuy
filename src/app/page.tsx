@@ -3,6 +3,7 @@ import { clsx } from "clsx"
 
 import styles from "./page.module.css"
 import { BestBuyCardList } from "@/features/BestBuyCardList"
+import { BestBuyForm } from "@/features/BestBuyForm"
 
 const TITLE = "【ベストバイ】みんなが買ってよかったもの3選！【永久保存版】"
 const DESCRIPTION =
@@ -25,7 +26,7 @@ const Home: FC = () => {
       </section>
       <section className={clsx(styles["section"], styles["cool"])}>
         <h2>ベストバイを投稿する</h2>
-        <div>form</div>
+        <BestBuyForm />
       </section>
     </main>
   )

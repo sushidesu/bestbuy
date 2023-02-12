@@ -1,6 +1,11 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
+
+  --surface-happy: #f6e05e;
+  --surface-cute: #f687b3;
+  --surface-cool: #63b3ed;
+  --surface-gentle: #38b2ac;
 }
 
 * {

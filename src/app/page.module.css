@@ -4,16 +4,16 @@
 }
 
 .section.happy {
-  --section-bg: #f6e05e;
+  --section-bg: var(--surface-happy);
 }
 .section.cute {
-  --section-bg: #f687b3;
+  --section-bg: var(--surface-cute);
 }
 .section.cool {
-  --section-bg: #63b3ed;
+  --section-bg: var(--surface-cool);
 }
 .section.gentle {
-  --section-bg: #38b2ac;
+  --section-bg: var(--surface-gentle);
 }
 .section {
   background-color: var(--section-bg);
