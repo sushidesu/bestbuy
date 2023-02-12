@@ -2,3 +2,19 @@
   display: flex;
   flex-direction: column;
 }
+
+.section.happy {
+  --section-bg: #f6e05e;
+}
+.section.cute {
+  --section-bg: #f687b3;
+}
+.section.cool {
+  --section-bg: #63b3ed;
+}
+.section.gentle {
+  --section-bg: #38b2ac;
+}
+.section {
+  background-color: var(--section-bg);
+}

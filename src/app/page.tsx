@@ -1,4 +1,5 @@
 import { FC } from "react"
+import { clsx } from "clsx"
 
 import styles from "./page.module.css"
 
@@ -9,15 +10,15 @@ const DESCRIPTION =
 const Home: FC = () => {
   return (
     <main className={styles["main"]}>
-      <section className={styles["section"]}>
+      <section className={clsx(styles["section"], styles["happy"])}>
         <h1>{TITLE}</h1>
         <p>{DESCRIPTION}</p>
       </section>
-      <section className={styles["section"]}>
+      <section className={clsx(styles["section"], styles["cute"])}>
         <h2>最新の投稿</h2>
         <div>cards</div>
       </section>
-      <section className={styles["section"]}>
+      <section className={clsx(styles["section"], styles["cool"])}>
         <h2>ベストバイを投稿する</h2>
         <div>form</div>
       </section>
