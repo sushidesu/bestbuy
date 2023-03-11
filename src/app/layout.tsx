@@ -2,6 +2,7 @@ import "./globals.css"
 
 import styles from "./layout.module.css"
 import { Footer } from "@/features/Footer"
+import { Metadata } from "next"
 
 export default function RootLayout({
   children,
@@ -10,11 +11,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={styles["html"]}>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
       <body className={styles["body"]}>
         <div className={styles["main"]}>{children}</div>
         <footer>
@@ -23,4 +19,19 @@ export default function RootLayout({
       </body>
     </html>
   )
+}
+
+export const metadata: Metadata = {
+  title: "Best Buy",
+  description: "みんなのベストバイが集まるWEBサイト",
+  viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/shortcut-icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
 }
