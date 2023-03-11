@@ -1,6 +1,7 @@
-import { useMemo } from "react"
-import type { AppRouter } from "@/server/app"
 import { createTRPCProxyClient, httpBatchLink } from "@trpc/client"
+import { useMemo } from "react"
+
+import type { AppRouter } from "@/server/app"
 
 export const createClient = () =>
   createTRPCProxyClient<AppRouter>({

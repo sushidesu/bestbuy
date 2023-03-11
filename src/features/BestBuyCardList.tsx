@@ -1,4 +1,5 @@
 import { FC } from "react"
+
 import { BestBuyCard } from "./BestBuyCard"
 
 type BestBuyCardListProps = {

@@ -1,6 +1,7 @@
 import { z } from "zod"
-import { router, publicProcedure } from "../router"
-import { createPost, post, postId } from "../types/post"
+
+import { publicProcedure, router } from "../router"
+import { createPost, post } from "../types/post"
 
 export const postRouter = router({
   create: publicProcedure

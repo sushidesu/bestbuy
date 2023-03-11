@@ -1,8 +1,10 @@
 import "./globals.css"
 
-import styles from "./layout.module.css"
-import { Footer } from "@/features/Footer"
 import { Metadata } from "next"
+
+import { Footer } from "@/features/Footer"
+
+import styles from "./layout.module.css"
 
 export default function RootLayout({
   children,

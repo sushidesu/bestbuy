@@ -1,7 +1,8 @@
 "use client"
 
-import { useTrpc } from "@/libs/trpc"
 import { FC, useEffect, useState } from "react"
+
+import { useTrpc } from "@/libs/trpc"
 
 type BestBuyCardProps = {
   title: string

@@ -1,9 +1,10 @@
-import { FC } from "react"
 import { clsx } from "clsx"
+import { FC } from "react"
 
-import styles from "./page.module.css"
 import { BestBuyCardList } from "@/features/BestBuyCardList"
 import { BestBuyForm } from "@/features/BestBuyForm"
+
+import styles from "./page.module.css"
 
 const TITLE = "【ベストバイ】みんなが買ってよかったもの3選！【永久保存版】"
 const DESCRIPTION =

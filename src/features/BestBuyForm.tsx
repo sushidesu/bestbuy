@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-type BestBuyFormProps = {}
+type BestBuyFormProps = Record<string, never>
 
 export const BestBuyForm: FC<BestBuyFormProps> = () => {
   return (
