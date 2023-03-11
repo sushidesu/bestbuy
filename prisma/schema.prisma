@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = []
+}
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model BestBuy {
+  id String @id
+  authorName String
+  firstUrl String
+  firstName String
+  firstImageUrl String
+  secondUrl String
+  secondName String
+  secondImageUrl String
+  thirdUrl String
+  thirdName String
+  thirdImageUrl String
+}

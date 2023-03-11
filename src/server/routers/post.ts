@@ -1,14 +1,19 @@
+import { v4 as uuidv4 } from "uuid"
 import { z } from "zod"
 
+import { prisma } from "../prisma"
 import { publicProcedure, router } from "../router"
-import { createPost, post } from "../types/post"
-
+import { createInput, post, postId } from "../types/post"
+import { convertCreate, convertGet } from "../types/post"
 export const postRouter = router({
   create: publicProcedure
-    .input(createPost)
+    .input(createInput)
     .output(z.void())
-    .mutation(() => undefined),
-
+    .mutation(async (req) => {
+      await prisma.bestBuy.create({
+        data: convertCreate(postId.parse(uuidv4()), req.input),
+      })
+    }),
   list: publicProcedure
     .input(z.void())
     .output(z.array(post))
@@ -21,23 +26,10 @@ export const postRouter = router({
       })
     )
     .output(post.optional())
-    .query(() => ({
-      id: "post_01",
-      authorName: "すし職人",
-      first: {
-        type: "amazon",
-        amazonProductId: "amazon_01",
-        name: "ポケットモンスター ビタミン/ミネラル",
-      },
-      second: {
-        type: "amazon",
-        amazonProductId: "amazon_02",
-        name: "ゼルダの伝説 5本の指と4つの手足",
-      },
-      third: {
-        type: "amazon",
-        amazonProductId: "amazon_03",
-        name: "スプラトゥーン 北海道大移動",
-      },
-    })),
+    .query(async (req) => {
+      const data = await prisma.bestBuy.findFirstOrThrow({
+        where: { id: req.input.postId },
+      })
+      return convertGet(data)
+    }),
 })
