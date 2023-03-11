@@ -1,10 +1,25 @@
-import { FC } from "react"
+"use client"
+
+import { useTrpc } from "@/libs/trpc"
+import { FC, useEffect, useState } from "react"
 
 type BestBuyCardProps = {
   title: string
 }
 
 export const BestBuyCard: FC<BestBuyCardProps> = ({ title }) => {
+  const trpc = useTrpc()
+
+  const [text, setText] = useState<string | undefined>()
+
+  useEffect(() => {
+    const doFetch = async () => {
+      const post = await trpc.post.get.query()
+      setText(post)
+    }
+    doFetch()
+  }, [trpc])
+
   return (
     <div>
       <div>
@@ -14,6 +29,7 @@ export const BestBuyCard: FC<BestBuyCardProps> = ({ title }) => {
       </div>
       <div>
         <p>{title}</p>
+        <p>{text ? text : "loading..."}</p>
       </div>
     </div>
   )

@@ -2,6 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next/font': 13.2.4
+  '@trpc/client': ^10.15.0
+  '@trpc/server': ^10.15.0
   '@types/node': 18.15.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -22,6 +24,8 @@ specifiers:
 
 dependencies:
   '@next/font': 13.2.4
+  '@trpc/client': 10.15.0_@trpc+server@10.15.0
+  '@trpc/server': 10.15.0
   '@types/node': 18.15.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -270,6 +274,18 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
+    dev: false
+
+  /@trpc/client/10.15.0_@trpc+server@10.15.0:
+    resolution: {integrity: sha512-Tmm3N7jibEOZTsvHRU+tWCVvUf8F9/UcKOVTGAWuyasBpnjOZ7ClZ81F9wo4cg9+9tUxUhuJns+E96/HtATpyQ==}
+    peerDependencies:
+      '@trpc/server': 10.15.0
+    dependencies:
+      '@trpc/server': 10.15.0
+    dev: false
+
+  /@trpc/server/10.15.0:
+    resolution: {integrity: sha512-Kf+wTU5iZjjjEzqZDy+o5wc4nEZKvE0yWdF9qZa72xLu6eTJ0BS2hnwQZeCZ2pIbmQb8/6lFr5igHiY4/dy0mA==}
     dev: false
 
   /@types/json-schema/7.0.11:
