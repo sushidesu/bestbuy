@@ -14,7 +14,7 @@ export const BestBuyCard: FC<BestBuyCardProps> = ({ title }) => {
 
   useEffect(() => {
     const doFetch = async () => {
-      const post = await trpc.post.get.query()
+      const post = await trpc.post.get.query({ postId: "post_01" })
       if (post) {
         setText(post.first.name)
       }

@@ -1,5 +1,7 @@
 import { z } from "zod"
 
+const authorName = z.string().min(1).brand<"authorName">()
+
 const amazonProductId = z.string().brand<"amazonProductId">()
 export const amazonItem = z.object({
   type: z.literal("amazon"),
@@ -20,12 +22,34 @@ export const item = z
   .discriminatedUnion("type", [amazonItem, customItem])
   .brand("item")
 
-const postId = z.string().brand<"postId">()
+export const postId = z.string().brand<"postId">()
 export const post = z
   .object({
     id: postId,
+    authorName,
     first: item,
     second: item,
     third: item,
   })
   .brand<"post">()
+
+/**
+ * 新規投稿アイテム
+ */
+export const createItem = z
+  .object({
+    amazonProductId,
+  })
+  .brand<"createItem">()
+
+/**
+ * 新規投稿
+ */
+export const createPost = z
+  .object({
+    authorName,
+    first: createItem,
+    second: createItem,
+    third: createItem,
+  })
+  .brand<"createPost">()
